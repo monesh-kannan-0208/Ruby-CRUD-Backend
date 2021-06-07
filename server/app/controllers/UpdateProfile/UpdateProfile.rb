@@ -15,7 +15,7 @@ module UpdateProfile
             address = updateDetails['profileDetails']['address']
             joiningdate = updateDetails['profileDetails']['joiningdate']
             begin
-                con = PG.connect :host => '', :dbname => '', :user => '', :password => ''
+                con = PG.connect :host => 'ec2-34-206-8-52.compute-1.amazonaws.com', :dbname => 'd18gs9nb0qhlph', :user => 'dhnyhcjisebrfv', :password => 'db684610afc0a65090086eed1f859c37719f23c5bda4ddc4709fc1f5ed585b73'
                 exist = con.exec "update emp set name = '#{name}',password = '#{password}',empcode = '#{empcode}',address = '#{address}',joiningdate = '#{joiningdate}' where email = '#{email}'"
                 
                     puts "Updated User Details"

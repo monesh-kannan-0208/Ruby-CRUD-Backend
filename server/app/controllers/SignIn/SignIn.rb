@@ -14,7 +14,7 @@ module SignIn
             password = signinDetails['signinDetails']['password']
 
             begin
-                con = PG.connect host:'ec2-35-169-188-58.compute-1.amazonaws.com', dbname: 'denfue801hlg5v', user:'kfdmxxbwfsbhyb', password: '62522c639856cf962740a1287c6116bc74f09f60d59f9014d7c1603bfc0c8039'
+                con = PG.connect :host => 'ec2-34-206-8-52.compute-1.amazonaws.com', :dbname => 'd18gs9nb0qhlph', :user => 'dhnyhcjisebrfv', :password => 'db684610afc0a65090086eed1f859c37719f23c5bda4ddc4709fc1f5ed585b73'
                 exist = con.exec "select exists (SELECT * FROM Emp WHERE email='#{email}' and password = '#{password}')"
 
                 if exist[0]["exists"]=='t'
